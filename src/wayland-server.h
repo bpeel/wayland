@@ -39,6 +39,18 @@ enum {
 	WL_EVENT_ERROR    = 0x08
 };
 
+/**
+ * Gets the opcode of a request from its interface struct
+ *
+ * Given the name of an interface struct and a request within it this
+ * will return the opcode number. For example it can be used like
+ * this:
+ *
+ * int opcode = WL_REQUEST_OPCODE(wl_region_interface, subtract);
+ */
+#define WL_REQUEST_OPCODE(interface, member) \
+	(offsetof(struct interface, member) / sizeof (void (*) (void)))
+
 struct wl_event_loop;
 struct wl_event_source;
 typedef int (*wl_event_loop_fd_func_t)(int fd, uint32_t mask, void *data);
