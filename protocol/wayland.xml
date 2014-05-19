@@ -1652,7 +1652,7 @@
     </request>
   </interface>
 
-  <interface name="wl_output" version="2">
+  <interface name="wl_output" version="3">
     <description summary="compositor output region">
       An output describes part of the compositor geometry.  The
       compositor works in the 'compositor coordinate system' and an
@@ -1790,6 +1790,12 @@
       </description>
       <arg name="factor" type="int" summary="scaling factor of output"/>
     </event>
+
+    <!-- Version 3 additions -->
+
+    <request name="release" type="destructor" since="3">
+      <description summary="release the output object"/>
+    </request>
   </interface>
 
   <interface name="wl_region" version="1">
