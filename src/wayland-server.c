@@ -1166,6 +1166,12 @@ wl_resource_set_implementation(struct wl_resource *resource,
 	resource->dispatcher = NULL;
 }
 
+WL_EXPORT const void *
+wl_resource_get_implementation(struct wl_resource *resource)
+{
+	return resource->object.implementation;
+}
+
 WL_EXPORT void
 wl_resource_set_dispatcher(struct wl_resource *resource,
 			   wl_dispatcher_func_t dispatcher,

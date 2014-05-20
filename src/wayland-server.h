@@ -369,6 +369,8 @@ wl_resource_set_implementation(struct wl_resource *resource,
 			       const void *implementation,
 			       void *data,
 			       wl_resource_destroy_func_t destroy);
+const void *
+wl_resource_get_implementation(struct wl_resource *resource);
 void
 wl_resource_set_dispatcher(struct wl_resource *resource,
 			   wl_dispatcher_func_t dispatcher,
